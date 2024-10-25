@@ -11,4 +11,10 @@ const joiUserSchema=joi.object({
    blocked:joi.boolean().optional()
 })
 
-module.exports={joiUserSchema}
+const loginSachema=joi.object({
+    username:joi.string().required(),
+    password:joi.string().required()
+
+})
+
+module.exports={joiUserSchema,loginSachema}
