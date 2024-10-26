@@ -10,8 +10,8 @@ const productsSchema=new mongoose.Schema({
     price:{type:Number,required:true},
     quantity:{type:Number,required:true},
     offerPrice:{type:Number,required:true},
-    // newCollections:{type:Boolean,required:true},
-    // outDoor:{type:Boolean,required:true},
+    newCollections:{type:Boolean,required:true},
+    outDoor:{type:Boolean,required:true},
     details:{type:String,required:true},
 })
 module.exports=mongoose.model("Products",productsSchema)

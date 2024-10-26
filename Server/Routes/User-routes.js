@@ -1,8 +1,9 @@
 const express=require("express");
 const {getUser,createUser,loginUser}=require("../Controlller/Users-side/Users") 
 // const users=require("../Controlller/Users") 
-const {data}=require("../Controlller/Users-side/Products")
+const products=require("../Controlller/Users-side/Products")
 const router=express.Router()
+const cart=require("../Controlller/Users-side/Cart")
 
 // router.get("/",users.getUser)
 // router.post("/",users.createUser)
@@ -13,7 +14,14 @@ router
 .post("/login",loginUser)
 
       //Products Routes.........
-.post("/data",data)     
+// .post("/data",data)   
+.get("/products",products.getAllProducts)  
+.get("/products/:category",products.getProductByCategory)  
+.get("/productsby/:id",products.getProductById)  
+
+.post("/cart",cart.addToCart)
+.get("/getcart",cart.getCartItem)
+
 
 
 module.exports=router

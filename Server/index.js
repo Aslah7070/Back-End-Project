@@ -6,7 +6,7 @@ const cors=require("cors");
 const userRoutes=require("./Routes/User-routes")
 // app.use(cors())
 
-app.use("/users",userRoutes)
+app.use("/",userRoutes)
 // app.use("/Products",userRoutes)
 require("dotenv").config()
 mongoose.connect(process.env.MONGO_URI).then(()=>{
